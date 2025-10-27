@@ -1,0 +1,29 @@
+POST http://localhost:3000/users/create-user
+Content-Type: application/json
+{
+  "name": "Laura",
+  "email": "laura@gmail.com",
+  "password": "Laura123456",
+  "role": "admin",
+  "activities": ["writer", "singer", "designer"]
+}
+
+POST http://localhost:3000/users/check-user
+Content-Type: application/json
+{
+  "email": "laura@gmail.com",
+  "password": "Laura1234567"
+}
+
+## Al llevar el Bearer el servidor asume que tu eres quien dices ser
+GET http://localhost:3000/users/get-user/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJsYXVyYUBnbWFpbC5jb20iLCJyb2wiOiJhZG1pbiIsImFjdGl2aXRpZXMiOlsid3JpdGVyIiwic2luZ2VyIiwiZGVzaWduZXIiXSwiaWF0IjoxNzYwNjYwNDM4LCJleHAiOjE3NjA2NjEzMzh9.pZthlrTE2mNNJTsRgOPGq12cre3CK2Vta_23AmVYCwc
+
+
+PATCH http://localhost:3000/users/update-user/3
+Content-Type: application/json
+{
+  "name": "Laura Diaz"
+}
+
+DELETE http://localhost:3000/users/delete-user/3

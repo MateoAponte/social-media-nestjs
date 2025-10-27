@@ -1,0 +1,16 @@
+GET http://localhost:3000/categories/2/architecture
+
+POST http://localhost:3000/categories/create-category
+Content-Type: application/json
+{
+  "id": 1,
+  "name": "Visual artist",
+  "description": "La categoría de Artistas Visuales",
+  "subcategories": [
+    "architecture",
+    "photography",
+    "painting",
+    "composition",
+    "drawing"
+  ]
+}
