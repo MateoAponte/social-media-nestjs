@@ -20,7 +20,7 @@ import { AuthModule } from './auth/auth.module';
       useFactory: () => ({
         type: 'postgres',
         autoLoadEntities: true,
-        // synchronize: true,
+        synchronize: true,
         // port: 5432,
         // username: 'postgres',
         // password: 'Pes.azul123',
