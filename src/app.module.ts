@@ -16,18 +16,23 @@ import { AuthModule } from './auth/auth.module';
     CategoriesModule,
     PostsModule,
     CommentsModule,
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      autoLoadEntities: true,
-      // synchronize: true,
-      // port: 5432,
-      // username: 'postgres',
-      // password: 'Pes.azul123',
-      // host: 'localhost',
-      // logging: ['schema', 'error'],
-      // database: 'social-media',  
-    
-      url: 'postgresql://neondb_owner:npg_9l4ezGcJyPuW@ep-summer-dew-a41un8yy.us-east-1.aws.neon.tech/neondb?sslmode=require'
+    TypeOrmModule.forRootAsync({
+      useFactory: () => ({
+        type: 'postgres',
+        autoLoadEntities: true,
+        // synchronize: true,
+        // port: 5432,
+        // username: 'postgres',
+        // password: 'Pes.azul123',
+        // host: 'localhost',
+        // logging: ['schema', 'error'],
+        // database: 'social-media',
+        schema: 'public',
+        entities: ['dist/**/*.entity.js'],
+        migrationsRun: true,
+        migrations: ['dist/migrations/*.js'],
+        url: 'postgresql://neondb_owner:npg_9l4ezGcJyPuW@ep-summer-dew-a41un8yy.us-east-1.aws.neon.tech/neondb?sslmode=require'
+      })
     }),
     PerfilesModule,
     EventsModule,
