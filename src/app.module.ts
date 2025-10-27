@@ -19,6 +19,7 @@ import { AuthModule } from './auth/auth.module';
     TypeOrmModule.forRoot({
       type: 'postgres',
       autoLoadEntities: true,
+      entities: ['dist/**/*.entity{.ts,.js}'],
       ssl: {
         rejectUnauthorized: false,
       },
