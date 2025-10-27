@@ -19,11 +19,15 @@ import { AuthModule } from './auth/auth.module';
     TypeOrmModule.forRoot({
       type: 'postgres',
       autoLoadEntities: true,
-      entities: ['dist/**/*.entity{.ts,.js}'],
-      ssl: {
-        rejectUnauthorized: false,
-      },
-      url: 'postgresql://neondb_owner:npg_9l4ezGcJyPuW@ep-summer-dew-a41un8yy-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require'
+      // synchronize: true,
+      // port: 5432,
+      // username: 'postgres',
+      // password: 'Pes.azul123',
+      // host: 'localhost',
+      // logging: ['schema', 'error'],
+      // database: 'social-media',  
+    
+      url: 'postgresql://neondb_owner:npg_9l4ezGcJyPuW@ep-summer-dew-a41un8yy.us-east-1.aws.neon.tech/neondb?sslmode=require'
     }),
     PerfilesModule,
     EventsModule,
